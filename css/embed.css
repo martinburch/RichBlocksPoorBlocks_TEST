@@ -42,11 +42,12 @@ overflow: hidden;
 body {
 background:url(../images/bg.png) repeat scroll 0 0 transparent;
 font-family: Georgia,Times,"Times New Roman",serif;
+text-align: center;
 }
 
 #above-map,#below-map {
 	padding: 0 8px;
-	font-size: 14px;
+	font-size: 13px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -57,7 +58,7 @@ font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",ser
 
 #legend {
 background:none repeat scroll 0 0 #FFF;
-font-family:Arial;
+font-family:Georgia,Times,"Times New Roman",serif;
 font-size:12px;
 text-align:center;
 border-style:solid;
@@ -74,4 +75,8 @@ font-size: 24px;
 font-size: 16px;
 font-weight: 600;
 margin-bottom: 10px;
+}
+
+.info-window {
+font-size: 13px;
 }
