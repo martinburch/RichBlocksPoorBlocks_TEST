@@ -1,3 +1,5 @@
+/* begin required formatting for fluid embed */
+
 html,body {
 margin: 0;
 padding: 0;
@@ -7,7 +9,7 @@ overflow: hidden;
 }
 
 #above-map {
-height: 110px;
+height: 100px;
 position: absolute;
 left: 0;
 right: 2px;
@@ -18,7 +20,7 @@ overflow: hidden;
 #map-canvas {
 width: auto;
 position: absolute;
-top: 125px;
+top: 100px;
 bottom: 20px;
 left: 0;
 right: 0;
@@ -39,4 +41,37 @@ overflow: hidden;
 
 body {
 background:url(../images/bg.png) repeat scroll 0 0 transparent;
+font-family: Georgia,Times,"Times New Roman",serif;
+}
+
+#above-map,#below-map {
+	padding: 0 8px;
+	font-size: 14px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+margin: 0;
+padding: 0;
+font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
+}
+
+#legend {
+background:none repeat scroll 0 0 #FFF;
+font-family:Arial;
+font-size:12px;
+text-align:center;
+border-style:solid;
+border-width:1px;
+margin:5px;
+padding:10px;
+}
+
+#page-hed {
+font-size: 24px;
+}
+
+#page-dek {
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 10px;
 }

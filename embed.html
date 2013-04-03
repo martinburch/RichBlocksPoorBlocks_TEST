@@ -40,11 +40,12 @@
 
 		<!-- ABOVE MAP -->
 		<div id="above-map">
-			<h1>Rich Blocks, Poor Blocks</h1>
-			<h2>A map of income and rent in every neighborhood in every city in America</h2>
+			<h1 id="page-hed">Rich Blocks, Poor Blocks</h1>
+			<h2 id="page-dek">A map of income and rent in every neighborhood in every city in America</h2>
 			<div id="address-form-container">
 				<span id="form-pretext"> Enter a city name or address and pick a state -- or just a pick a state from the dropdown.</span>
-				(<input type="checkbox" name="colorblind" value="colorblind"><span id="colorblind">I'm colorblind</span>)<br>
+				<br>
+				<div id="address-form">
 				<input id="address" type="text">,
 				<select id="state-select">
 					<option value="default">PICK A STATE</option>
@@ -53,8 +54,8 @@
 					<option value="default">PICK MAP TYPE</option>
 				</select>
 				<input id="button-search" type="button" value="Search" />
-				<br>
-				<span id="note">(NOTE: Loading taking long? Zoom in or out. No map? Reload, or choose another browser. <b>And if you want more economic details, click any part of the map after you click "Search."</b>)</span>
+								(<input type="checkbox" name="colorblind" value="colorblind"><span id="colorblind">I'm colorblind</span>)
+				</div>
 			</div>
 		</div>
 		<!-- /ABOVE MAP -->
