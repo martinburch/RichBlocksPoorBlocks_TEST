@@ -1,48 +1,50 @@
+/* v1.0 */
+
 /* begin required formatting for fluid embed */
 
 html,body {
-margin: 0;
-padding: 0;
-width:100%;
-height:100%;
-overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	height:100%;
+	overflow: hidden;
 }
 
 #above-map {
-height: 100px;
-position: absolute;
-left: 0;
-right: 2px;
-width: auto;
-overflow: hidden;
+	height: 100px;
+	position: absolute;
+	left: 0;
+	right: 2px;
+	width: auto;
+	overflow: hidden;
 }
 
 #map-canvas {
-width: auto;
-position: absolute;
-top: 100px;
-bottom: 30px;
-left: 0;
-right: 0;
+	width: auto;
+	position: absolute;
+	top: 100px;
+	bottom: 30px;
+	left: 0;
+	right: 0;
 }
 
 #below-map {
-height: 30px;
-position: absolute;
-bottom: 0px;
-z-index: 15;
-width: auto;
-left: 0;
-right: 0;
-overflow: hidden;
+	height: 30px;
+	position: absolute;
+	bottom: 0px;
+	z-index: 15;
+	width: auto;
+	left: 0;
+	right: 0;
+	overflow: hidden;
 }
 
 /* end of required formatting for fluid embed */
 
 body {
-background:url(../images/bg.png) repeat scroll 0 0 transparent;
-font-family: Georgia,Times,"Times New Roman",serif;
-text-align: center;
+	background:url(../images/bg.png) repeat scroll 0 0 transparent;
+	font-family: Georgia,Times,"Times New Roman",serif;
+	text-align: center;
 }
 
 #above-map,#below-map {
@@ -51,36 +53,55 @@ text-align: center;
 }
 
 h1,h2,h3,h4,h5,h6 {
-margin: 0;
-padding: 0;
-font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
+	margin: 0;
+	padding: 0;
+	font-family: Rockwell,"Courier Bold",Courier,Georgia,Times,"Times New Roman",serif;
 }
 
 #legend {
-background:none repeat scroll 0 0 #FFF;
-font-family:Georgia,Times,"Times New Roman",serif;
-font-size:12px;
-text-align:center;
-border-style:solid;
-border-width:1px;
-margin:5px;
-padding:10px;
+	background:none repeat scroll 0 0 #FFF;
+	font-family:Georgia,Times,"Times New Roman",serif;
+	font-size:12px;
+	text-align:center;
+	border-style:solid;
+	border-width:1px;
+	margin:5px;
+	padding:10px;
+}
+
+#legend-title {
+	font-size: 13px;
 }
 
 #page-hed {
-font-size: 24px;
+	font-size: 24px;
 }
 
 #page-dek {
-font-size: 16px;
-font-weight: 600;
-margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 10px;
 }
 
 .info-window {
-font-size: 13px;
+	font-size: 11px;
+	text-align: left;
+	/*width: 400px;*/
+}
+
+#bottom5, #top5 {
+	position: relative;
+	bottom: 1px;
+}
+
+#gradient {
+		width: 100px;
+		height: 12px;
+		margin-top: 5px;
+		margin-left: 5px;
+		margin-right: 5px;
 }
 
 footer {
-margin-top: 5px;
+	margin-top: 5px;
 }

@@ -26,8 +26,12 @@ function getUrlVars(){
 
 $(document).ready(function(){
 	// SECTION 0: Capture query string
-	// PATH/TO/index.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
+	// PATH/TO/embed.html?colorblind=checked&address=1900%20Pennsylvania%20Ave&state-select=District%20of%20Columbia&map-type-select=Income
 	p = getUrlVars();
+
+	var urlArr = window.location.href.split('/');
+	var urlArr2 = urlArr[urlArr.length-1].split('?');
+	var htmlPageName = urlArr2[0];
 
 	$.getJSON("./js/states_pretty.JSON",function(states){
 		var styleNum, legendScale, condition, fillO, dataType, errorType, infoWindow1;
@@ -150,7 +154,12 @@ $(document).ready(function(){
 						rangeType = 'medianIncome';
 
 						infoWindow1 = 'Median household income';
-						infoWindow2 = 'Statewide middle-class income range';
+						if (htmlPageName==='index.html'){
+							infoWindow2 = 'Statewide middle-class income range';
+						} else if(htmlPageName==='embed.html'){
+							infoWindow2 = 'State middle-class income range';
+						}; // DONE: if (htmlPageName==='index.html')
+						
 					} else if(mapTypeText==="Rent"){
 						condition = 'median_rent > 0';
 						styleNum = 4;
@@ -162,11 +171,11 @@ $(document).ready(function(){
 						rangeType = 'medianRent';
 
 						infoWindow1 = 'Median monthly rent';
-						infoWindow2 = 'Statewide middle rental-range';
+						infoWindow2 = 'Statewide mid-level rental-range';
 					}; // DONE: if(mapTypeText==="Income")
+					
 					var infoWindow1Lower = infoWindow1.toLowerCase();
 
-					
 					var strokeC = '#ffffff';
 					var strokeO = 0.3;
 
@@ -215,11 +224,21 @@ $(document).ready(function(){
 									var midRange1 = accounting.formatMoney(states[selectedState][rangeType]["percent40"]);
 									var midRange2 = accounting.formatMoney(states[selectedState][rangeType]["percent60"]);
 
+									var infoWindowExplanationPart1 = 'All data come from the 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>.';
+									var infoWindowExplanationPart2 =  'The statewide middle range covers Census Tracts which have a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of this state\'s Census Tracts.';
+									var infoWindowExplanationFull;
+
+									if (htmlPageName==='index.html') { // This 'if' statement changes what appears in the infoWindow, depending on which web page calls 'main.js'
+										infoWindowExplanationFull = infoWindowExplanationPart1 + infoWindowExplanationPart2;
+									} else if(htmlPageName==='embed.html'){
+										infoWindowExplanationFull = infoWindowExplanationPart1; 
+									};
+
 									e.infoWindowHtml = [
 										'<b>' + e.row['label'].value + '.</b>',
 										'<b>' + infoWindow1 + ':</b> ' + medianVal + ' (+/- ' + marginError + ').',
 										'<b>' + infoWindow2 + ':</b> ' + midRange1 + ' to ' + midRange2 + '. <br>',
-										'<i>All data come from the 2007-2011 <a href="http://www.census.gov/acs/www/" target="_blank">American Community Survey</a>. The statewide middle range covers Census Tracts which have a '+ infoWindow1Lower +' higher than the lowest 40 percent -- and lower than the highest 40 percent -- of this state\'s Census Tracts.</i>'
+										'<i>' + infoWindowExplanationFull + '</i>'
 									];
 									infoWindow.setContent('<div class="info-window">' + e.infoWindowHtml.join('<br>') + '</div>');
 									infoWindow.setPosition(e.latLng);
