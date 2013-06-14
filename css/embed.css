@@ -11,7 +11,7 @@ html,body {
 }
 
 #above-map {
-	height: 100px;
+	height: 130px;
 	position: absolute;
 	left: 0;
 	right: 2px;
@@ -22,14 +22,14 @@ html,body {
 #map-canvas {
 	width: auto;
 	position: absolute;
-	top: 100px;
-	bottom: 30px;
+	top: 130px;
+	bottom: 60px;
 	left: 0;
 	right: 0;
 }
 
 #below-map {
-	height: 30px;
+	height: 60px;
 	position: absolute;
 	bottom: 0px;
 	z-index: 15;
@@ -80,7 +80,7 @@ h1,h2,h3,h4,h5,h6 {
 #page-dek {
 	font-size: 16px;
 	font-weight: 600;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 }
 
 .info-window {
