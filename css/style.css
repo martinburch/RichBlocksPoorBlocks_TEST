@@ -8,7 +8,7 @@ width:100%;
 }
 
 body {
-background:url(/images/bg.png) repeat scroll 0 0 transparent;
+background:url(../images/bg.png) repeat scroll 0 0 transparent;
 height:85%;
 position:relative;
 right:8px;
