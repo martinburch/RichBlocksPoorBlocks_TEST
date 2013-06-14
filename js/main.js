@@ -294,3 +294,31 @@ $(document).ready(function(){
 	}); // DONE: $.getJSON()
 }); // DONE: $(document).ready()
 
+// This function creates an embed code by reading the form fields
+
+function embed(){
+	var address = document.getElementById('address').value;
+	var state = $("#state-select").val();
+	var mapType = $("#map-type-select").val();
+	var colorblind = $('input[name=colorblind]').attr('checked');
+	
+	if (address != '' && state != 'default' && mapType != 'default'){
+	var embedUrl = 'http://www.richblockspoorblocks.com/embed.html';
+	var queryString = '?';
+	if (colorblind){
+	queryString += 'colorblind='+colorblind;
+	} else {
+	queryString += 'colorblind=';
+	}
+	queryString += '&address='+address;
+	queryString += '&state-select='+state;
+	queryString += '&map-type-select='+mapType;
+	
+	embedUrl = embedUrl+encodeURI(queryString);
+	
+	embedPrefix = '<iframe width="460" height="500" src="'+embedUrl+'"></iframe>';
+	
+	alert('Copy this code into your webpage:\n\n'+embedPrefix);
+	}
+
+}
